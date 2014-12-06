@@ -1,5 +1,6 @@
 function draw_canvas() {
-    var canvas = document.getElementById("canvas1");
+    debugger;
+    var canvas = document.getElementById("staff-canvas");
     var context = canvas.getContext("2d");
 
     for (var y = 50; y < 175; y += 25) {
@@ -15,7 +16,6 @@ function draw_canvas() {
 }
 
 function clear_canvas() {
-    var canvas = document.getElementById("canvas1");
+    var canvas = document.getElementById("staff-canvas");
     canvas.width = canvas.width;
 }
-
