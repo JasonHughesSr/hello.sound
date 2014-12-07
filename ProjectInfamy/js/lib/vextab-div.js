@@ -26931,7 +26931,7 @@ Artist = (function() {
     }
     this.rendered = true;
     if (!Artist.NOLOGO) {
-      LOGO = "vexflow.com";
+      LOGO = "";
       width = ctx.measureText(LOGO).width;
       ctx.save();
       ctx.setFont("Times", 10, "italic");
@@ -28022,7 +28022,7 @@ Vex.Flow.TabDiv.prototype.init = function(sel, options) {
   }
 
   this.ctx_sel = $(sel).find(".vex-canvas");
-  this.renderer.resize(this.width, this.height);
+  //this.renderer.resize(this.width, this.height);
   this.ctx = this.renderer.getContext();
   this.ctx.setBackgroundFillStyle(this.ctx_sel.css("background-color"));
   this.ctx.scale(this.scale, this.scale);
@@ -28031,7 +28031,7 @@ Vex.Flow.TabDiv.prototype.init = function(sel, options) {
   this.editor = $(sel).attr("editor") || "";
   this.show_errors = $(sel).attr("show-errors") || "";
   this.editor_width= $(sel).attr("editor_width") || this.width;
-  this.editor_height= $(sel).attr("editor_height") || 200;
+  this.editor_height= $(sel).attr("editor_height") || 100;
 
   var that = this;
   if (this.editor == "true") {

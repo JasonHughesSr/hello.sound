@@ -2,48 +2,84 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project Infamy</title>
-    <!--Require.js-->
-    <!--<script src="ProjectInfamy/js/lib/require.js"></script>-->
-    <!--Underscore-->
-    <!--<script src="ProjectInfamy/js/lib/underscore.js"></script>-->
+
 
     <!--bootstrap / jquery stuff-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">-->
-    <!--<script src="ProjectInfamy/js/lib/jquery.js"></script>-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--&lt;!&ndash;[if lt IE 9]>-->
-    <!--<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
-    <!--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
-    <!--<![endif]&ndash;&gt;-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
     <!--Vexflow Library for Tabs and Notes-->
-    <!--<script src="ProjectInfamy/js/lib/vexflow-debug.js"></script>-->
-    <!--<script src="ProjectInfamy/js/lib/vexflow-min.js"></script>-->
     <link href="ProjectInfamy/css/style.css" media="screen" rel="Stylesheet" type="text/css" />
     <link href="ProjectInfamy/css/lib/vextab.css" media="screen" rel="Stylesheet" type="text/css" />
     <script src="ProjectInfamy/js/lib/vextab-div.js"></script>
+
     <script>
-        debugger;
         VexTabDiv.Flow.Renderer.USE_CANVAS_PROXY = true;
-        VexTabDiv.Artist.DEBUG = false
+        VexTabDiv.Artist.DEBUG = false;
+
+        function hideMain(){
+            $( "#main" ).hide();
+            $( "#about" ).show();
+            $("#aboutButton").active();
+            $("#aboutButton").focus();
+        };
+
+        function hideAbout(){
+            $( "#about" ).hide();
+            $( "#main" ).show();
+            $("#homeButton").active();
+            $("#homeButton").focus();
+        };
     </script>
 </head>
 
 <body>
-<div class="content">
-    <div style="width:720; margin-left: auto; margin-right: auto;">
-        <div class="vex-tabdiv"
-             width=700 scale=1.0 editor="true"
-             editor_width=720 editor_height=220>
-            tabstave
-            notes :q (5/2.5/3.7/4) 5h6/3 7/4 |
-            notes :8 t12p7p5h7/4 :q 7/5 :8 3s5/5
+<div class="container">
+
+    <div class="header col-md-12">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" id="homeButton"><a href="#" onclick="hideAbout()">Home</a></li>
+                    <li role="presentation" id="aboutButton"><a href="#" onclick="hideMain()" >About</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Hello Sound!</h3>
+    </div>
+
+    <div></div>
+
+    <div class="col-md-12" id="about" style="display:none">
+        <div class="console col-md-7">
+            Who Are We?<br>
+            What Do We Do?<br>
+            Why a musical thing?<br>
+        </div>
+        <div class="col-md-5">
+
         </div>
     </div>
+
+
+    <div class="col-md-12" id="main">
+        <div class="console col-md-7">
+            Console Should Go Here<br>
+            Console Should Go Here<br>
+            Console Should Go Here<br>
+            Console Should Go Here<br>
+            Console Should Go Here<br>
+            Console Should Go Here<br>
+            Console Should Go Here<br>
+            Console Should Go Here<br>
+        </div>
+        <div class="col-md-5">
+            <div class="vex-tabdiv" scale=1.0 editor="true">tabstave notation=true tablature=false </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
