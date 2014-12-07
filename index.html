@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project Infamy</title>
 
-
     <!--bootstrap / jquery stuff-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="ProjectInfamy/js/lib/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
@@ -17,6 +17,39 @@
     <link href="ProjectInfamy/css/style.css" media="screen" rel="Stylesheet" type="text/css" />
     <link href="ProjectInfamy/css/lib/vextab.css" media="screen" rel="Stylesheet" type="text/css" />
     <script src="ProjectInfamy/js/lib/vextab-div.js"></script>
+
+    <script src="ProjectInfamy/js/lib/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(document).ready(function(){
+
+            //ACE IDE
+
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/twilight");
+            editor.getSession().setMode("ace/mode/javascript");
+
+            var include = function(userCode){
+
+                eval(userCode);
+
+            };
+
+
+        });
+    </script>
+
+    <style>
+
+        #editorContainer{
+            height: 600px;
+        }
+
+        #editor
+        {
+            height: 100%;
+        }
+
+    </style>
 
     <script>
         VexTabDiv.Flow.Renderer.USE_CANVAS_PROXY = true;
@@ -54,15 +87,10 @@
     <div></div>
 
     <div class="col-md-12" id="main">
-        <div class="console col-md-7">
-            Console Should Go Here<br>
-            Console Should Go Here<br>
-            Console Should Go Here<br>
-            Console Should Go Here<br>
-            Console Should Go Here<br>
-            Console Should Go Here<br>
-            Console Should Go Here<br>
-            Console Should Go Here<br>
+        <div class="console col-md-7" id="editorContainer">
+
+            <pre id="editor">alert('test');</pre>
+
         </div>
         <div class="col-md-5">
             <div class="vex-tabdiv" scale=1.0 editor="true">tabstave notation=true tablature=false </div>
