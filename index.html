@@ -68,6 +68,11 @@
             $("#homeButton").active();
             $("#homeButton").focus();
         };
+
+        function fillEditor(obj){
+            $("#vexEdit").text(obj);
+        };
+
     </script>
 </head>
 
@@ -84,7 +89,7 @@
             <h3 class="text-muted">Hello Sound!</h3>
     </div>
 
-    <div></div>
+    <div onclick="fillEditor('tabstave notation=true tablature=true')">TEST THIS!</div>
 
     <div class="col-md-12" id="main">
         <div class="console col-md-7" id="editorContainer">
@@ -93,7 +98,7 @@
 
         </div>
         <div class="col-md-5">
-            <div class="vex-tabdiv" scale=1.0 editor="true">tabstave notation=true tablature=false </div>
+            <div class="vex-tabdiv" id="vexEdit" scale=1.0 editor="true">tabstave notation=true tablature=false</div>
         </div>
     </div>
 
