@@ -3,87 +3,47 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Project Infamy</title>
-    <!--Script for musical staff-->
-    <script src="ProjectInfamy//js/staff.js"></script>
-
-    <!--Vexflow Library for Tabs and Notes-->
-    <script src="ProjectInfamy/js/lib/vexflow-min.js"></script>
+    <!--Require.js-->
+    <!--<script src="ProjectInfamy/js/lib/require.js"></script>-->
+    <!--Underscore-->
+    <!--<script src="ProjectInfamy/js/lib/underscore.js"></script>-->
 
     <!--bootstrap / jquery stuff-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">-->
+    <!--<script src="ProjectInfamy/js/lib/jquery.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body role="document">
-<div class="col-md-12" id="navigation_bar">
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project Infamy</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!--Hack Spacing-->
-<div class="col-md-12" id="main-area" role="main">
-    <div class="vex-tabdiv" width="400" scale="1.0" editor="true" editor_height="100" style="position: relative;">
-        <canvas class="vex-canvas" width="400" height="120"></canvas>
-        <p></p>
-        <div class="editor-error"></div>
-        <p></p>
-        <textarea class="editor" style="width: 408px; height: 102px;"></textarea>
-    </div>
-    <div class="col-md-12" id="staff-area">
-        <div class="col-md-2" id="left-staff">
-            <p>
-                <a href="#" onclick="draw_canvas();return false" id="drawCanvas" class="btn btn-primary btn-lg" role="button">Draw Canvas</a>
-                <a href="#" onclick="clear_canvas();return false" id="clearCanvas" class="btn btn-primary btn-lg" role="button">Clear Canvas</a>
-            </p>
-        </div>
-        <div class="col-md-8" id="mid-staff">
-            <canvas id="staff-canvas" height="175" width="900" style="border:1px dotted"></canvas>
-        </div>
-        <div class="col-md-2" id="right-staff" >
-        </div>
-    </div>
-</div>
+    <!--&lt;!&ndash;[if lt IE 9]>-->
+    <!--<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
+    <!--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
 
+
+    <!--Vexflow Library for Tabs and Notes-->
+    <!--<script src="ProjectInfamy/js/lib/vexflow-debug.js"></script>-->
+    <!--<script src="ProjectInfamy/js/lib/vexflow-min.js"></script>-->
+    <link href="ProjectInfamy/css/style.css" media="screen" rel="Stylesheet" type="text/css" />
+    <link href="ProjectInfamy/css/lib/vextab.css" media="screen" rel="Stylesheet" type="text/css" />
+    <script src="ProjectInfamy/js/lib/vextab-div.js"></script>
+    <script>
+        debugger;
+        VexTabDiv.Flow.Renderer.USE_CANVAS_PROXY = true;
+        VexTabDiv.Artist.DEBUG = false
+    </script>
+</head>
+
+<body>
+<div class="content">
+    <div style="width:720; margin-left: auto; margin-right: auto;">
+        <div class="vex-tabdiv"
+             width=700 scale=1.0 editor="true"
+             editor_width=720 editor_height=220>
+            tabstave
+            notes :q (5/2.5/3.7/4) 5h6/3 7/4 |
+            notes :8 t12p7p5h7/4 :q 7/5 :8 3s5/5
+        </div>
+    </div>
 </body>
 </html>

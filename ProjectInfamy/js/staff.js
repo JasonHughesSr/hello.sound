@@ -1,21 +1,36 @@
-function draw_canvas() {
-    debugger;
-    var canvas = document.getElementById("staff-canvas");
-    var context = canvas.getContext("2d");
+// Load VexTab module.
+vextab = require("vextab");
+$ = require("jquery");
+_ = require("underscore");
 
-    for (var y = 50; y < 175; y += 25) {
-        context.moveTo(100, y);
-        context.lineTo(600, y);
+$(function() {
+    VexTab = vextab.VexTab;
+    Artist = vextab.Artist;
+    Renderer = vextab.Vex.Flow.Renderer;
+
+    Artist.DEBUG = true;
+    VexTab.DEBUG = false;
+
+    // Create VexFlow Renderer from canvas element with id #boo
+    renderer = new Renderer($('#boo')[0], Renderer.Backends.CANVAS);
+
+    // Initialize VexTab artist and parser.
+    artist = new Artist(10, 10, 600, {scale: 0.8});
+    vextab = new VexTab(artist);
+
+    function render() {
+        try {
+            vextab.reset();
+            artist.reset();
+            vextab.parse($("#blah").val());
+            artist.render(renderer);
+            $("#error").text("");
+        } catch (e) {
+            console.log(e);
+            $("#error").html(e.message.replace(/[\n]/g, '<br/>'));
+        }
     }
 
-    context.stroke();
-
-    context.font = "bold 28px sans-serif";
-    context.fillText("\u266a", 250, 50);
-    context.fillText("\u266b", 300, 150);
-}
-
-function clear_canvas() {
-    var canvas = document.getElementById("staff-canvas");
-    canvas.width = canvas.width;
-}
+    $("#blah").keyup(_.throttle(render, 250));
+    render();
+});
