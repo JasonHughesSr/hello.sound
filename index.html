@@ -80,6 +80,7 @@
 
         function fillEditor(obj){
             $("#vexEdit").text(obj);
+            Vex.Flow.TabDiv.start();
         };
 
     </script>
@@ -98,16 +99,32 @@
             <h3 class="text-muted">Hello Sound!</h3>
     </div>
 
-    <div onclick="fillEditor('tabstave notation=true tablature=true')">TEST THIS!</div>
-
     <div class="col-md-12" id="main">
         <div class="console col-md-7" id="editorContainer">
 
             <pre id="editor">alert('test');</pre>
 
         </div>
+
         <div class="col-md-5">
-            <div class="vex-tabdiv" id="vexEdit" scale=1.0 editor="true">tabstave notation=true tablature=false</div>
+            <div class="vex-tabdiv col-md-12" id="vexEdit" scale=1.0 editor="true">tabstave notation=true tablature=false</div>
+
+            <div class="col-md-12">
+                <h3>Keywords And Values:</h3><br>
+                tabstave<br>
+                notation true/false<br>
+                tablature true/false<br>
+                clef	treble, alto, tenor, bass, percussion<br>
+                key	C, Am, F, Dm, Bb, Gm, Eb, Cm, Ab, Fm, Db, Bbm, Gb, Ebm, Cb, Abm, G, Em, D, Bm, A, F#m, E, C#m, B, G#m, F#, D#m, C#, A#m<br>
+                time	C, C|, #/#<br>
+                tuning	standard, dropd, eb, E/5,B/4,G/4,D/4,A/3,E/3<br>
+
+                <h3>Examples:</h3><br>
+                tabstave notation=true renders a standard notation stave above the tab stave.<br>
+                tabstave notation=true tablature=false only renders the notation stave.<br>
+                tabstave notation=true clef=alto changes the clef to alto.<br>
+                tabstave notation=true clef=bass key=C# time=C| would create two staves (one notation, one tab), bass clef in the key of C# and half common time <br>
+            </div>
         </div>
     </div>
 
