@@ -5,7 +5,7 @@ We are calling our team (project) Infamy.  The name is because the final day of 
 
 | VonMises | autt | jbeard88
 |--- |--- |---
-| ![VonMises](JasonMug.jpg) | ![autt]() | ![jbeard88]()
+| ![VonMises](JasonMug.jpg) | ![autt](BrandonMug.jpg) | ![jbeard88]()
 
 ##Team Info
 
