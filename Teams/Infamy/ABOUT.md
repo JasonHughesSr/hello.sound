@@ -28,12 +28,13 @@ embarked on their endeavor.
 
 ###Jeffery Beard (jbeard88)
  Jeffery if a budding developer quickly learning the ropes with Angular, SQL, C#, VB.NET, and other cutting edge technologies.  His current role has him doing a lot of QA Testing, in
- addition to development.  He is a father and enjoys spending time with his daughter.  When he's not coding there's a good chance he's working on his movie colection, crawling local pubs, or gaming on his Xbox.
+ addition to development.  He is a father and enjoys spending time with his daughter.  When he's not coding there's a good chance he's working on his movie collection, crawling local pubs, or gaming on his Xbox.
  Jeffery is excited to be making his hobby a career now and hopes to continue to grow in knowledge and skill.  In this app, Jeffery was responsible for integrating sounds to the rest of the app, providing an
  extra layer of the user experience.
 
+#Hello Sound!
 ##Project Info
-The main idea behind Hello Sound is to teach some basic object oriented programming fundamentals in a fun way.  The app is a single page website where a user can
-write some cde in a console. This code can create objects that represent musical notes, notation, sounds, etc.  Using HTML's canvas element a graphical view of their object is presented.  An audio
-representation is also available.  This app is currently in alpha stage.  Future goals are to have the ability to print music composed to pdf (sheet music), export audio to various formats / cloud
-services, and to make it fully mobile friendly for use in a tablet.
+The main idea behind **Hello Sound!** is to teach some basic object oriented programming fundamentals in a fun way.  The app is a single page website where a user can
+write some cde in a console.  We're playing off the Hello World experience that most people get when they sample a new programming language This code can create objects that represent musical notes, notation,
+sounds, etc.  Using HTML's canvas element a graphical view of their object is presented.  An audio representation is also available.  This app is currently in alpha stage.  Future goals are to have the ability
+to print music composed to pdf (sheet music), export audio to various formats / cloud services, and to make it fully mobile friendly for use in a tablet.
