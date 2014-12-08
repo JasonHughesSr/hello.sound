@@ -34,3 +34,7 @@ The main idea behind **Hello Sound!** is to teach some basic object oriented pro
 write some cde in a console.  We're playing off the Hello World experience that most people get when they sample a new programming language This code can create objects that represent musical notes, notation,
 sounds, etc.  Using HTML's canvas element a graphical view of their object is presented.  An audio representation is also available.  This app is currently in alpha stage.  Future goals are to have the ability
 to print music composed to pdf (sheet music), export audio to various formats / cloud services, and to make it fully mobile friendly for use in a tablet.
+
+###Cool Resources We Used To Build This
+-MIDI.js https://github.com/mudcube/MIDI.js
+-VexFlow https://github.com/0xfe/vexflow
