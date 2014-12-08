@@ -20,32 +20,16 @@
     <script src="ProjectInfamy/js/lib/MIDI/Base64.js"></script>
     <script src="ProjectInfamy/js/lib/MIDI/Base64binary.js"></script>
     <script src="ProjectInfamy/js/lib/Sound.js"></script>
+    <script src="ProjectInfamy/js/lib/underscore.js"></script>
 
 
     <!--Vexflow Library for Tabs and Notes-->
     <link href="ProjectInfamy/css/style.css" media="screen" rel="Stylesheet" type="text/css" />
     <link href="ProjectInfamy/css/lib/vextab.css" media="screen" rel="Stylesheet" type="text/css" />
     <script src="ProjectInfamy/js/lib/vextab-div.js"></script>
-
     <script src="ProjectInfamy/js/lib/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script>
-        $(document).ready(function(){
 
-            //ACE IDE
-
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/twilight");
-            editor.getSession().setMode("ace/mode/javascript");
-
-            var include = function(userCode){
-
-                eval(userCode);
-
-            };
-
-
-        });
-    </script>
+    <script src="ProjectInfamy/js/Note.js"></script>
 
     <style>
 
@@ -102,7 +86,23 @@
     <div class="col-md-12" id="main">
         <div class="console col-md-7" id="editorContainer">
 
-            <pre id="editor">alert('test');</pre>
+            <div class="playerControls">
+                <button onclick="execUserCodeWrapper(editor.getValue())">Start</button>
+                <button onclick="">Stop</button>
+            </div>
+
+            <pre id="editor">
+QuarterNote('C5');
+
+for(var i = 0; i < 2; i++)
+{
+    QuarterNote("A5");
+    HalfNote("A4");
+}
+
+HalfNote("A4");
+
+</pre>
 
         </div>
 
@@ -174,13 +174,30 @@
 <script>
     window.onload = function(){
         MIDI.loadPlugin({
-            soundfontUrl: "/ProjectInfamy/js/lib/MIDI/soundfont/",
+            soundfontUrl: "ProjectInfamy/js/lib/MIDI/soundfont/",
             instrument: "acoustic_grand_piano",
-            callback: function() {
-
-            }
+            callback: function() { }
         });
     };
 </script>
 </body>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.getSession().setMode("ace/mode/javascript");
+
+    var execUserCodeWrapper = function(userCode){
+
+        debugger;
+        NoteQueue = [];
+
+        eval(userCode);
+
+        ProcessNoteQueue();
+
+    };
+
+</script>
+
 </html>
