@@ -72,27 +72,24 @@
     <script>
         $(document).ready(function(){
 
-            NoteQueue = [];
-
             CreateVexFlow();
 
-            //do something with note queue
+        });
 
+        CreateVexFlow = function(){
+
+            NoteQueue = [];
+
+            //populate notes array by eval on user code
+            eval(editor.getValue());
+
+            //process the notes in order
             for(var i = 0; i < NoteQueue.length; i++)
             {
                 //create vex version of note object
                 var data = NoteQueue[i];
                 console.log(MIDI.noteToKey[data.noteValue]);
             }
-
-        });
-
-        CreateVexFlow = function(){
-
-
-
-            //populate notes array by eval on user code
-            eval(editor.getValue());
 
         };
 
