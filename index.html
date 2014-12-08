@@ -92,14 +92,26 @@
             //populate notes array by eval on user code
             eval(editor.getValue());
 
-            var data = 'tabstave notation=true tablature=false time=4/4\r\nnotes';
+            var line = '\r\ntabstave notation=true tablature=false\r\nnotes';
+
+            var data = line;
+
+            //we'll say 6 notes (any type) per line...
+
+            var noteCounter = 0;
 
             //process the notes in order
             for(var i = NoteQueue.length - 1; i >= 0; i--)
             {
+                if(noteCounter % 6 == 0 && noteCounter > 0)
+                {
+                    data += line;
+                }
+
                 //create vex version of note object
                 data += NoteQueue[i].vexFormat;
-                console.log(MIDI.noteToKey[data.noteValue]);
+
+                noteCounter++;
             }
 
             fillEditor(data);

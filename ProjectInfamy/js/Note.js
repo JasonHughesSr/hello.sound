@@ -26,7 +26,7 @@ ProcessNoteQueue = function()
 
 GetVexFormat = function(midiNoteType, noteTiming)
 {
-    var result = ':' + noteTiming + ' ';
+    var result = ' :' + noteTiming + ' ';
 
     if(midiNoteType.length == 3)
     {
