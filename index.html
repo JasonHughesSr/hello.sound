@@ -76,7 +76,11 @@
 
             editor.on('change', function(){
 
-                CreateVexFlow();
+                //try to prevent parsing error / bugs with ide...
+                try{
+                    CreateVexFlow();
+                }catch(e){}
+
 
             })
         });
@@ -88,7 +92,7 @@
             //populate notes array by eval on user code
             eval(editor.getValue());
 
-            var data = 'tabstave notation=true tablature=false\r\nnotes';
+            var data = 'tabstave notation=true tablature=false time=4/4\r\nnotes';
 
             //process the notes in order
             for(var i = NoteQueue.length - 1; i >= 0; i--)
