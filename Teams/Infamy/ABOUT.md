@@ -9,13 +9,13 @@ We are calling our team (project) Infamy.  The name is because the final day of 
 
 ##Team Info
 
-Team Infamy is a team of three developers from the Dallas, Texas area.  They entered <a href="https://koding.com/Hackathon" target="_blank"> Koding.com's hackathon</a>.
+Team Infamy is a team of three developers from the Dallas, Texas area.  They entered Koding.com's hackathon.
 The themes they chose to hack towards was creating an educational game that also taught some basics of programming.  Using HTML5, JavaScript, CSS, and various libraries they
 embarked on their endeavor.
 
 ###Team **Infamy** is:
 ###Jason Hughes
- Jason is a alum of <b>THE</b> Ohio State University and Western Governors University.  He is a .NET developer, who works with C#, VB.NET, Angular, Entity Framework, MSSQL, and other technologies on a
+ Jason is a alum of **THE** Ohio State University and Western Governors University.  He is a .NET developer, who works with C#, VB.NET, Angular, Entity Framework, MSSQL, and other technologies on a
  daily basis.  He is also a father of three.  He is active with his son's Cub Scout pack, his church, and supporting his wife as they home school their children.  In his free time he enjoys camping,
  hiking, and watching his Buckeyes play football.  He is also the team lead for the  Hello Sound project.  He enjoys learning more about his craft and developing with agility.  He one day hopes to be
  a project manager.  In this app, Jason was responsible for the over all look and feel, the musical notes representation, and moving the project along.
