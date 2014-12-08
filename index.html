@@ -49,6 +49,17 @@
             width: 80px;
         }
 
+        div.container
+        {
+            /*margin: 20px 20px 20px 20px;*/
+        }
+
+        .note
+        {
+            background-color: lightgray;
+            cursor: default;
+        }
+
     </style>
 
     <script>
@@ -91,6 +102,29 @@
                 }
 
             })
+
+            //create key set
+
+            var keys = MIDI.noteToKey;
+            for(var i = (108-21); i > 20 ; i--)
+            {
+                var note = $('<div class="note" noteValue="'+i+'">' +keys[i]+ '</div>');
+
+                note.click(function(){
+
+                    var note = $(this).attr('noteValue');
+                    MIDI.noteOn(0, note);
+                });
+
+                note.hover(function(){
+                    $(this).css('background-color', 'red');
+                }, function(){
+                    $(this).css('background-color', 'lightgrey');
+                });
+
+                $('#noteContainer').append(note);
+            }
+
         });
 
         CreateVexFlow = function(){
@@ -143,42 +177,15 @@
             </nav>
             <h2 class="text-muted">Hello Sound!</h2>
     </div>
-    <div class="col-md-12" id="main">
-        <div class="col-md-12">
-            <div class="row" style="padding-bottom: 25px;">
-                <div id="p-wrapper">
-                    <ul id="piano">
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div></li>
-                        <li><div class="anchor"></div><span></span></li>
-                        <li><div class="anchor"></div><span></span></li>
-                    </ul>
-                </div>
-            </div>
+    <div class="row">
+
+    <div class="col-md-1" >
+        <div id="noteContainer">
+
         </div>
+    </div>
+    <div class="col-md-11" id="main">
+
         <div class="console col-md-7" id="editorContainer">
 
             <div class="playerControls">
@@ -249,6 +256,7 @@ etc...
         </div>
     </div>
 
+    </div>
     <div class="col-md-12" id="about" style="display:none">
         <div class="console col-md-7">
             <p>
