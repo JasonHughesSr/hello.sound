@@ -28,11 +28,26 @@ CreateNote = function(noteKey, duration)
 {
     return {
         noteValue: MIDI.keyToNote[noteKey],
-        duration: duration
+        duration: duration,
+        isRest: false
     }
 };
 
-var wholeNoteLength = 1200;
+//note with no volume...
+CreateRest = function(duration)
+{
+    var rest = CreateNote('A6', duration);
+    rest.volume = 0;
+    return rest;
+};
+
+var wholeNoteLength = 1100;
+
+EighthNote = function(data)
+{
+    var note = CreateNote(data, wholeNoteLength / 8);
+    NoteQueue.unshift(note);
+}
 
 QuarterNote = function(data)
 {
@@ -49,5 +64,33 @@ HalfNote = function(data)
 WholeNote = function(data)
 {
     var note = CreateNote(data, wholeNoteLength);
+    NoteQueue.unshift(note);
+}
+
+
+
+
+
+EighthRest = function()
+{
+    var note = CreateRest(data, wholeNoteLength / 8);
+    NoteQueue.unshift(note);
+}
+
+QuarterRest = function()
+{
+    var note = CreateRest(data, wholeNoteLength / 4);
+    NoteQueue.unshift(note);
+}
+
+HalfRest = function()
+{
+    var note = CreateRest(data, wholeNoteLength / 2);
+    NoteQueue.unshift(note);
+}
+
+WholeRest = function()
+{
+    var note = CreateRest(data, wholeNoteLength);
     NoteQueue.unshift(note);
 }
