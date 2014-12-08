@@ -191,6 +191,28 @@
             <div class="playerControls">
                 <button class="songControlButton" onclick="execUserCodeWrapper(editor.getValue())">Play</button>
                 <button class="songControlButton" onclick="NoteQueue = []">Stop</button>
+                <!-- Small modal -->
+                <button type="button" class="songControlButton" data-toggle="modal" data-target=".bs-example-modal-sm">Intro</button>
+            </div>
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content" col-md-11>
+                        <p>
+                        Welcome to Hello Sound.  We hope you take a moment to look around. This site is a place where you can learn about
+                        programming by <b>doing</b> and make music at same time.  Take a look at our wiki, that's where we'll put
+                        documentation as the project ages.
+                        </p>
+                        <p>
+                            Basically, what you have is a console window where you can type in javascript like code.  You can do loops,
+                            assign variables, and when you're ready click PLAY and see what happens.  The syntax is pretty basic.  We've
+                            loaded a starter song for you.  If you're not familiar at all with javascript, there are lots of free
+                            tutorials online, like this <a href="http://www.w3schools.com/js/default.asp" target="_blank">one</a>.  Feel
+                            free to visit us on <a href="https://github.com/VonMises/hello.sound" target="_blank">GitHub</a>.
+                        </p>
+
+                        <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">OK</button></div>
+                    </div>
+                </div>
             </div>
 
 <pre id="editor">
