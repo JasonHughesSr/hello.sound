@@ -105,25 +105,7 @@
 
             //create key set
 
-            var keys = MIDI.noteToKey;
-            for(var i = (108-21); i > 20 ; i--)
-            {
-                var note = $('<div class="note" noteValue="'+i+'">' +keys[i]+ '</div>');
-
-                note.click(function(){
-
-                    var note = $(this).attr('noteValue');
-                    MIDI.noteOn(0, note);
-                });
-
-                note.hover(function(){
-                    $(this).css('background-color', 'red');
-                }, function(){
-                    $(this).css('background-color', 'lightgrey');
-                });
-
-                $('#noteContainer').append(note);
-            }
+            
 
         });
 
@@ -177,6 +159,7 @@
             </nav>
             <h2 class="text-muted">Hello Sound!</h2>
     </div>
+    <div style="position: fixed; top: 0; left: 0; z-index: 4; border-radius: 5px; overflow: hidden;" id="noteContainer"><div class="colors" id="C3">C3</div><div class="colors" id="Db3">Db3</div><div class="colors" id="D3">D3</div><div class="colors" id="Eb3">Eb3</div><div class="colors" id="E3">E3</div><div class="colors" id="F3">F3</div><div class="colors" id="Gb3">Gb3</div><div class="colors" id="G3">G3</div><div class="colors" id="Ab3">Ab3</div><div class="colors" id="A3">A3</div><div class="colors" id="Bb3">Bb3</div><div class="colors" id="B3">B3</div><div class="colors" id="C4">C4</div><div class="colors" id="Db4">Db4</div><div class="colors" id="D4">D4</div><div class="colors" id="Eb4">Eb4</div><div class="colors" id="E4">E4</div><div class="colors" id="F4">F4</div><div class="colors" id="Gb4">Gb4</div><div class="colors" id="G4">G4</div><div class="colors" id="Ab4">Ab4</div><div class="colors" id="A4">A4</div><div class="colors" id="Bb4">Bb4</div><div class="colors" id="B4">B4</div><div class="colors" id="C5">C5</div><div class="colors" id="Db5">Db5</div><div class="colors" id="D5">D5</div><div class="colors" id="Eb5">Eb5</div><div class="colors" id="E5">E5</div><div class="colors" id="F5">F5</div><div class="colors" id="Gb5">Gb5</div><div class="colors" id="G5">G5</div><div class="colors" id="Ab5">Ab5</div><div class="colors" id="A5">A5</div><div class="colors" id="Bb5">Bb5</div><div class="colors" id="B5">B5</div><div class="colors" id="C6">C6</div><div class="colors" id="Db6">Db6</div><div class="colors" id="D6">D6</div><div class="colors" id="Eb6">Eb6</div><div class="colors" id="E6">E6</div><div class="colors" id="F6">F6</div><div class="colors" id="Gb6">Gb6</div><div class="colors" id="G6">G6</div><div class="colors" id="Ab6">Ab6</div><div class="colors" id="A6">A6</div><div class="colors" id="Bb6">Bb6</div><div class="colors" id="B6">B6</div><div class="colors" id="C7">C7</div><div class="colors" id="Db7">Db7</div><div class="colors" id="D7">D7</div><div class="colors" id="Eb7">Eb7</div><div class="colors" id="E7">E7</div><div class="colors" id="F7">F7</div><div class="colors" id="Gb7">Gb7</div><div class="colors" id="G7">G7</div><div class="colors" id="Ab7">Ab7</div><div class="colors" id="A7">A7</div><div class="colors" id="Bb7">Bb7</div><div class="colors" id="B7">B7</div><div class="colors" id="C8">C8</div></div>
     <div class="row">
 
     <div class="col-md-1" >
@@ -185,7 +168,7 @@
         </div>
     </div>
     <div class="col-md-11" id="main">
-        <div style="position: fixed; top: 0; left: 0; z-index: 4; border-radius: 5px; overflow: hidden;" id="noteContainer"><div class="colors" id="C3">C3</div><div class="colors" id="Db3">Db3</div><div class="colors" id="D3">D3</div><div class="colors" id="Eb3">Eb3</div><div class="colors" id="E3">E3</div><div class="colors" id="F3">F3</div><div class="colors" id="Gb3">Gb3</div><div class="colors" id="G3">G3</div><div class="colors" id="Ab3">Ab3</div><div class="colors" id="A3">A3</div><div class="colors" id="Bb3">Bb3</div><div class="colors" id="B3">B3</div><div class="colors" id="C4">C4</div><div class="colors" id="Db4">Db4</div><div class="colors" id="D4">D4</div><div class="colors" id="Eb4">Eb4</div><div class="colors" id="E4">E4</div><div class="colors" id="F4">F4</div><div class="colors" id="Gb4">Gb4</div><div class="colors" id="G4">G4</div><div class="colors" id="Ab4">Ab4</div><div class="colors" id="A4">A4</div><div class="colors" id="Bb4">Bb4</div><div class="colors" id="B4">B4</div><div class="colors" id="C5">C5</div><div class="colors" id="Db5">Db5</div><div class="colors" id="D5">D5</div><div class="colors" id="Eb5">Eb5</div><div class="colors" id="E5">E5</div><div class="colors" id="F5">F5</div><div class="colors" id="Gb5">Gb5</div><div class="colors" id="G5">G5</div><div class="colors" id="Ab5">Ab5</div><div class="colors" id="A5">A5</div><div class="colors" id="Bb5">Bb5</div><div class="colors" id="B5">B5</div><div class="colors" id="C6">C6</div><div class="colors" id="Db6">Db6</div><div class="colors" id="D6">D6</div><div class="colors" id="Eb6">Eb6</div><div class="colors" id="E6">E6</div><div class="colors" id="F6">F6</div><div class="colors" id="Gb6">Gb6</div><div class="colors" id="G6">G6</div><div class="colors" id="Ab6">Ab6</div><div class="colors" id="A6">A6</div><div class="colors" id="Bb6">Bb6</div><div class="colors" id="B6">B6</div><div class="colors" id="C7">C7</div><div class="colors" id="Db7">Db7</div><div class="colors" id="D7">D7</div><div class="colors" id="Eb7">Eb7</div><div class="colors" id="E7">E7</div><div class="colors" id="F7">F7</div><div class="colors" id="Gb7">Gb7</div><div class="colors" id="G7">G7</div><div class="colors" id="Ab7">Ab7</div><div class="colors" id="A7">A7</div><div class="colors" id="Bb7">Bb7</div><div class="colors" id="B7">B7</div><div class="colors" id="C8">C8</div></div>
+
         <div class="console col-md-7" id="editorContainer">
 
             <div class="playerControls">
