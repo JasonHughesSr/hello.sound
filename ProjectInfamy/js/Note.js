@@ -9,7 +9,10 @@ ProcessNoteQueue = function()
     var note = NoteQueue.pop();
 
     if(note == undefined)
+    {
+        FinishedPlaying();
         return;
+    }
 
     MIDI.setVolume(0, 127);
     MIDI.noteOn(0, note.noteValue);
