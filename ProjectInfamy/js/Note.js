@@ -11,11 +11,14 @@ ProcessNoteQueue = function()
     if(note == undefined)
     {
         FinishedPlaying();
+        debugger;
         return;
     }
 
     MIDI.setVolume(0, 127);
-    MIDI.noteOn(0, note.noteValue);
+
+    if(!note.isRest)
+        MIDI.noteOn(0, note.noteValue);
 
     setTimeout(function(){
 
@@ -27,15 +30,23 @@ ProcessNoteQueue = function()
 
 }
 
-GetVexFormat = function(midiNoteType, noteTiming)
+GetVexFormat = function(midiNoteType, noteTiming, isRest)
 {
     var result = ' :' + noteTiming + ' ';
+
+    if(isRest == true)
+    {
+        result += '##';
+        return result;
+    }
+
+    if (typeof isRest === 'undefined')
+        isRest = false;
 
     if(midiNoteType.length == 3)
     {
         result += midiNoteType[0] + '@' + '/' + midiNoteType[2];
-    } else {
-
+    } else if(!isRest){
         result += midiNoteType[0] + '/' + midiNoteType[1];
     }
 
@@ -56,10 +67,11 @@ CreateRest = function(duration)
 {
     var rest = CreateNote('A6', duration);
     rest.volume = 0;
+    rest.isRest = true;
     return rest;
 };
 
-var wholeNoteLength = 1100;
+var wholeNoteLength = 2200;
 
 SixteenthNote = function(data)
 {
@@ -102,35 +114,36 @@ WholeNote = function(data)
 
 SixteenthRest = function()
 {
-    var note = CreateRest(data, wholeNoteLength / 16);
-    note.vexFormat = GetVexFormat(data, '16');
+    var note = CreateRest('A6', wholeNoteLength / 16);
+    note.vexFormat = GetVexFormat('A6', '16', true);
     NoteQueue.unshift(note);
 }
 
 EighthRest = function()
 {
-    var note = CreateRest(data, wholeNoteLength / 8);
-    note.vexFormat = GetVexFormat(data, '8');
+    var note = CreateRest('A6', wholeNoteLength / 8);
+    note.vexFormat = GetVexFormat('A6', '8', true);
     NoteQueue.unshift(note);
 }
 
 QuarterRest = function()
 {
-    var note = CreateRest(data, wholeNoteLength / 4);
-    note.vexFormat = GetVexFormat(data, 'q');
+    var note = CreateRest('A6', wholeNoteLength / 4);
+    note.vexFormat = GetVexFormat('A6', 'q', true);
     NoteQueue.unshift(note);
 }
 
 HalfRest = function()
 {
-    var note = CreateRest(data, wholeNoteLength / 2);
-    note.vexFormat = GetVexFormat(data, 'h');
+    var note = CreateRest('A6', wholeNoteLength / 2);
+    note.vexFormat = GetVexFormat('A6', 'h', true);
     NoteQueue.unshift(note);
 }
 
 WholeRest = function()
 {
-    var note = CreateRest(data, wholeNoteLength);
-    note.vexFormat = GetVexFormat(data, 'w');
+    debugger;
+    var note = CreateRest('A6', wholeNoteLength);
+    note.vexFormat = GetVexFormat('A6', 'w', true);
     NoteQueue.unshift(note);
 }

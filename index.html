@@ -80,7 +80,9 @@
                 //try to prevent parsing error / bugs with ide...
                 try{
                     CreateVexFlow();
-                }catch(e){}
+                }catch(e){
+                    console.log(e);
+                }
 
 
             })
@@ -181,23 +183,25 @@
 //Hot Cross Buns
 for(var i = 0; i < 2; i++) //LOOP TWICE
 {
-    HalfNote('B4'); //Half B Note 4th Octave
-    HalfNote('A4'); //Half A Note 4th Octave
-    HalfNote('G4'); //Half G Note 4th Octave
-}
-
-for(var i = 0; i < 4; i++) //L0OP 4 TIMES
-{
+    QuarterNote('B4'); //Quarter B Note 4th Octave
+    QuarterNote('A4'); //Quarter A Note 4th Octave
     QuarterNote('G4'); //Quarter G Note 4th Octave
 }
 
 for(var i = 0; i < 4; i++) //L0OP 4 TIMES
 {
-    QuarterNote('A4');
+    EighthNote('G4'); //Eighth G Note 4th Octave
 }
-HalfNote('B4');
-HalfNote('A4');
-HalfNote('G4');
+
+for(var i = 0; i < 4; i++) //L0OP 4 TIMES
+{
+    EighthNote('A4');
+}
+
+QuarterNote('B4');
+QuarterNote('A4');
+QuarterNote('G4');
+
 </pre>
 
         </div>
