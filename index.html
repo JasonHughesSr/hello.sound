@@ -177,32 +177,27 @@
                 <button onclick="execUserCodeWrapper(editor.getValue())">Play</button>
             </div>
 
-            <pre id="editor">
+<pre id="editor">
 //Hot Cross Buns
-for(var i = 0; i < 2; i++)
+for(var i = 0; i < 2; i++) //LOOP TWICE
 {
-    HalfNote('B5');
-    HalfNote('A5');
-    HalfNote('G5');
+    HalfNote('B4'); //Half B Note 4th Octave
+    HalfNote('A4'); //Half A Note 4th Octave
+    HalfNote('G4'); //Half G Note 4th Octave
 }
 
-for(var i = 0; i < 4; i++)
+for(var i = 0; i < 4; i++) //L0OP 4 TIMES
 {
-    QuarterNote('G5');
+    QuarterNote('G4'); //Quarter G Note 4th Octave
 }
 
-for(var i = 0; i < 4; i++)
+for(var i = 0; i < 4; i++) //L0OP 4 TIMES
 {
-    QuarterNote('A5');
+    QuarterNote('A4');
 }
-
-for(var i = 0; i < 1; i++)
-{
-    HalfNote('B5');
-    HalfNote('A5');
-    HalfNote('G5');
-}
-
+HalfNote('B4');
+HalfNote('A4');
+HalfNote('G4');
 </pre>
 
         </div>
