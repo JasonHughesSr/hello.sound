@@ -20,13 +20,14 @@ ProcessNoteQueue = function()
     if(!note.isRest)
     {
         MIDI.noteOn(0, note.noteValue);
+        remoteKeyPressed(note);
     }
     debugger;
 
     setTimeout(function(){
 
         MIDI.noteOff(0, note.noteValue, 0.1);
-
+        remoteKeyReleased(note);
         ProcessNoteQueue();
 
     }, note.duration);

@@ -16,7 +16,3 @@ var remoteKeyPressed = function(note){
 var remoteKeyReleased = function(note){
 	$("#" + MIDI.noteToKey[note.noteValue]).toggleClass('activated');
 };
-
-var keyPressed = function(el) {
-	console.log(el);
-};
