@@ -38,3 +38,6 @@ to print music composed to pdf (sheet music), export audio to various formats / 
 ###Cool Resources We Used To Build This
 - MIDI.js https://github.com/mudcube/MIDI.js  
 - VexFlow https://github.com/0xfe/vexflow
+- Ace IDE https://github.com/ajaxorg/ace  
+- jQuery http://jquery.com/
+- Bootstrap http://getbootstrap.com/
