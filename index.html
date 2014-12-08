@@ -43,6 +43,12 @@
             height: 100%;
         }
 
+        .songControlButton
+        {
+            height: 50px;
+            width: 80px;
+        }
+
     </style>
 
     <script>
@@ -176,7 +182,8 @@
         <div class="console col-md-7" id="editorContainer">
 
             <div class="playerControls">
-                <button onclick="execUserCodeWrapper(editor.getValue())">Play</button>
+                <button class="songControlButton" onclick="execUserCodeWrapper(editor.getValue())">Play</button>
+                <button class="songControlButton" onclick="NoteQueue = []">Stop</button>
             </div>
 
 <pre id="editor">
@@ -203,6 +210,19 @@ QuarterNote('A4');
 HalfNote('G4');
 SixteenthNote('G6');
 
+/*
+Available functions:
+WholeNote(...)
+HalfNote(...)
+QuarterNote(...)
+EighthNote(...)
+SixteenthNote(...)
+
+Rests are also available
+WholeRest()
+HalfRest()
+etc...
+*/
 </pre>
 
         </div>
@@ -288,7 +308,14 @@ SixteenthNote('G6');
     editor.setTheme("ace/theme/twilight");
     editor.getSession().setMode("ace/mode/javascript");
 
+    IsPlaying = false;
+
     var execUserCodeWrapper = function(userCode){
+
+        if(IsPlaying)
+            return;
+
+        IsPlaying = true;
 
         NoteQueue = [];
 
@@ -297,6 +324,12 @@ SixteenthNote('G6');
         ProcessNoteQueue();
 
     };
+
+    //preventing play from being run twice...
+    FinishedPlaying = function()
+    {
+        IsPlaying = false;
+    }
 
 </script>
 

@@ -144,7 +144,6 @@ HalfRest = function()
 
 WholeRest = function()
 {
-    debugger;
     var note = CreateRest(wholeNoteLength);
     note.vexFormat = GetVexFormat('A6', 'w', true);
     NoteQueue.unshift(note);
