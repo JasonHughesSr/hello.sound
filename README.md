@@ -36,5 +36,5 @@ sounds, etc.  Using HTML's canvas element a graphical view of their object is pr
 to print music composed to pdf (sheet music), export audio to various formats / cloud services, and to make it fully mobile friendly for use in a tablet.
 
 ###Cool Resources We Used To Build This
--MIDI.js https://github.com/mudcube/MIDI.js
--VexFlow https://github.com/0xfe/vexflow
+- MIDI.js https://github.com/mudcube/MIDI.js  
+- VexFlow https://github.com/0xfe/vexflow
